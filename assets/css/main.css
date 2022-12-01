@@ -1,0 +1,168 @@
+body {
+    background-color: #58BEF1;
+}
+
+/* 메인페이지 */
+.main__wrap {
+    width: 100%;
+    height: 100vh;
+}
+
+.main__left {
+    width: 50%;
+    background-color: #F4B5C6;
+    position: fixed;
+}
+
+.main__left .main__left__title {
+    font-size: 200px;
+    font-family: 'Thesignature';
+    text-align: center;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 50px;
+    z-index: 9999;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main__img>img {
+    width: 100%;
+    margin-top: 120px;
+    user-select: none;
+}
+
+.main__img>img:nth-child(1) {
+    position: relative;
+}
+
+.main__img>img:nth-child(2) {
+    width: 100%;
+    position: absolute;
+    top: -6.2%;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.main__img:hover>img:nth-child(2) {
+    opacity: 1;
+}
+
+.main__img__inner:hover .sunglasses {
+    top: 27%;
+    left: 49%;
+}
+
+.sunglasses {
+    position: absolute;
+    width: 38%;
+    top: 42%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+}
+
+
+
+.main__right {
+    width: 50%;
+    height: 1000px;
+    /* background-color: #58BEF1; */
+}
+
+.main__right__title {
+    position: absolute;
+    top: 3%;
+    left: 53%;
+    font-family: 'OKChan';
+    font-size: 150px;
+    font-weight: normal;
+    color: #fff;
+    -webkit-text-stroke: 0.4px #FC80A1;
+    line-height: 1;
+    text-shadow: -2px 0 #FC80A1, 0 2px #FC80A1, 2px 0 #FC80A1, 0 -2px #FC80A1;
+}
+
+.main__desc {
+    position: absolute;
+    bottom: 3%;
+    left: 53%;
+    color: #fff;
+    font-family: 'NanumBarunpen';
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.pot__mark {
+    position: absolute;
+    top: 50%;
+    left: 78%;
+}
+
+/* .circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    border-radius: 50%;
+} */
+
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+}
+
+
+.logo {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    border-radius: 50%;
+    /* filter: brightness(1.5) contrast(1.0); */
+    background-image: url(../img/woman_running_3d.png);
+}
+
+.text {
+    /* position: absolute; */
+    width: 50%;
+    height: 100%;
+    animation: rotateText 10s linear infinite;
+    color: #fff;
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.text span {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    font-size: 0.8em;
+    transform-origin: 0 67px;
+}
+
+.circle .mark__img {
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
