@@ -70,7 +70,7 @@ body {
     height: 1000px;
     position: absolute;
     top: 3%;
-    left: 53%;
+    left: 50%;
     display: flex;
     flex-wrap: wrap;
     /* background-color: #58BEF1; */
@@ -84,6 +84,7 @@ body {
     -webkit-text-stroke: 0.4px #FC80A1;
     line-height: 1;
     text-shadow: -2px 0 #FC80A1, 0 2px #FC80A1, 2px 0 #FC80A1, 0 -2px #FC80A1;
+    margin-left: 2rem;
 }
 
 .main__desc {
@@ -94,6 +95,7 @@ body {
     width: 100%;
     margin-top: 13rem;
     margin-bottom: 100px;
+    margin-left: 2rem;
 }
 
 .main__desc img {
@@ -183,9 +185,12 @@ body {
     border: 13px solid #FF8B39;
     border-radius: 15px;
     margin-top: 10rem;
+    margin-left: 2rem;
 }
 
-.main__info .myinfo1 .info__desc1 {}
+.main__info .myinfo1 .info__desc1 {
+    margin-left: 2rem;
+}
 
 .main__info .myinfo2>img {
     /* position: absolute;
@@ -194,11 +199,11 @@ body {
     border: 13px solid #5BB25B;
     border-radius: 15px;
     margin-top: 10rem;
-    margin-left: 18rem;
+    margin-left: 21rem;
 }
 
 .main__info .myinfo2 .info__desc2 {
-    margin-left: 18rem;
+    margin-left: 21rem;
 }
 
 .main__info .myinfo3>img {
@@ -208,9 +213,12 @@ body {
     border: 13px solid #FF6CA4;
     border-radius: 15px;
     margin-top: 10rem;
+    margin-left: 2rem;
 }
 
-.main__info .myinfo3 .info__desc3 {}
+.main__info .myinfo3 .info__desc3 {
+    margin-left: 2rem;
+}
 
 .main__info .myinfo4>img {
     /* position: absolute;
@@ -219,11 +227,11 @@ body {
     border: 13px solid #E8AA09;
     border-radius: 15px;
     margin-top: 10rem;
-    margin-left: 18rem;
+    margin-left: 21rem;
 }
 
 .main__info .myinfo4 .info__desc4 {
-    margin-left: 18rem;
+    margin-left: 21rem;
 }
 
 .main__info .myinfo5>img {
@@ -233,10 +241,27 @@ body {
     border: 13px solid #90595D;
     border-radius: 15px;
     margin-top: 10rem;
+    margin-left: 2rem;
 }
 
-.main__info .myinfo5 .info__desc5 {}
+.main__info .myinfo5 .info__desc5 {
+    margin-left: 2rem;
+    margin-bottom: 10rem;
+}
 
+
+.page1 {
+    width: 50%;
+    background-color: #000;
+    height: 100vh;
+}
+
+.page2 {
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    margin-left: 0rem;
+}
 
 /* works */
 .main__wrap2 {

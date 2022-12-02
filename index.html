@@ -9,11 +9,23 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
+    <style>
+        #parallax__info {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="main__wrap">
-        <div class="main__left">
+        <div class="main__left" data-0="display:block; position:fixed" data-5700="position:absolute">
             <h2 class="main__left__title">Potfolio</h2>
             <div class="main__img__inner">
                 <div class="main__img">
@@ -22,6 +34,7 @@
                 </div>
                 <img class="sunglasses" src="assets/img/glasses 1.png" alt="선글라스">
             </div>
+            <div class="page1" data-4342="opacity:1"></div>
         </div>
         <div class="main__right">
             <h2 class="main__right__title">
@@ -55,6 +68,7 @@
                         봄날의 햇살처럼, 다른 사람들과 따뜻함을 전하고 나눌 줄 아는 사람입니다.
                     </p>
                 </div>
+                <img class="icon1" src="assets/img/sun_3d.png" alt="">
                 <div class="myinfo2">
                     <img src="assets/img/myinfo2.jpg" alt="어바웃미2">
                     <p class="info__desc2">
@@ -86,9 +100,11 @@
                     </p>
                 </div>
             </div>
+            <div class="page2" data-4342="display:block; left:100% opacity:0"
+                data-5700="display:block; left:50% opacity:1"></div>
         </div>
     </div>
-    <div class="main__wrap2">
+    <!-- <div class="main__wrap2">
         <div class="main__left">
             <h2 class="main__left__title">
                 작업한<br>
@@ -111,15 +127,60 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> -->
+    <aside id="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+    </aside>
 
     <script>
+        // 돌아가는 글씨 간격조절
         const text = document.querySelector('.text p');
         text.innerHTML = text.innerText.split("").map(
             (char, i) =>
                 `<span style="transform:rotate(${i * 12.7}deg)">${char}</span>`
         ).join("");
+    </script>
+    <script>
+        const Page1 = document.querySelector(".page1");
+        window.addEventListener("scroll", () => {
+            // let scrollTop = window.pageYOffset;
+            //let scrollTop = window.scrollY;
+            //let scrollTop = document.documentElement.scrollTop;
+            //셋 중 하나로 해도 다 된다는 뜻
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            //Math.round() 반올림 Math.ceil사용 가능
+            //scroll.innerText = Math.round(scrollTop);
+            document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+
+            // 박스값이 스크롤 탑 값보다 커지거나 같으면
+            // if (scrollTop >= document.querySelector(".main__wrap2").offsetTop) {
+            //     // Page1.
+            //     document.querySelector(".main__left").style.display = "none";
+            // }
+        });
+
+        //스크롤 이동
+        document.querySelectorAll("#parallax__nav li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                //클릭하면 이벤트 막아줌(바로 딱 나오게 하는게 아니라 그 후에 부드럽게 나오게 하기 위함)
+                e.preventDefault();
+                //li = li a태그들 href = secton1,2,...
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    //부드럽게 움직이는 효과
+                    behavior: "smooth"
+                })
+            })
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        const s = skrollr.init();
+        function scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+            requestAnimationFrame(scroll);
+        }
+        scroll();
     </script>
 </body>
 
